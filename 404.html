@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | UseByWhen</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Search our food shelf life guide instead.">
+  <meta name="robots" content="noindex, follow">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .content-box {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .emoji { 
+      font-size: 4rem; 
+      margin-bottom: 1rem; 
+      display: block;
+    }
+    
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+    
+    .search-box {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: none;
+      border-radius: 50px;
+      width: 100%;
+      font-size: 16px;
+      outline: none;
+      background: white;
+      color: #333;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .search-box::placeholder {
+      color: #666;
+    }
+    
+    .back-button {
+      display: inline-block; 
+      padding: 1rem 2rem; 
+      background: rgba(255, 255, 255, 0.2);
+      color: white; 
+      text-decoration: none; 
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .popular-searches {
+      margin-top: 2rem;
+      text-align: left;
+    }
+    
+    .popular-searches h3 {
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+    
+    .search-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+    
+    .search-tag {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      color: white;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+    
+    .search-tag:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-1px);
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      .content-box {
+        padding: 2rem 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.5rem;
+      }
+      
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content-box">
+    <span class="emoji">🤔</span>
+    <h1>Page Not Found</h1>
+    <p>Sorry, we couldn't find the page you're looking for. Maybe you're looking for information about a specific food item?</p>
+    
+    <input 
+      type="text" 
+      class="search-box" 
+      placeholder="Search for a food item (e.g., 'milk', 'cottage cheese', 'strawberries')" 
+      id="search404"
+    >
+    
+    <div class="popular-searches">
+      <h3>Popular Searches:</h3>
+      <div class="search-tags">
+        <a href="/?search=milk" class="search-tag">Milk</a>
+        <a href="/?search=cottage%20cheese" class="search-tag">Cottage Cheese</a>
+        <a href="/?search=eggs" class="search-tag">Eggs</a>
+        <a href="/?search=strawberries" class="search-tag">Strawberries</a>
+        <a href="/?search=leftover%20pizza" class="search-tag">Leftover Pizza</a>
+        <a href="/?search=wine" class="search-tag">Wine</a>
+        <a href="/?search=coffee" class="search-tag">Coffee</a>
+      </div>
+    </div>
+    
+    <div style="margin-top: 2rem;">
+      <a href="/" class="back-button">← Back to Food Guide</a>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('search404').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        const query = this.value.trim();
+        if (query) {
+          window.location.href = '/?search=' + encodeURIComponent(query);
+        }
+      }
+    });
+    
+    // Focus search box on load
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('search404').focus();
+    });
+  </script>
+</body>
+</html>

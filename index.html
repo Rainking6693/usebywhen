@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://usebywhen.com/">
+    
+    <!-- Optimized SEO Meta Tags -->
+    <title>UseByWhen.com - Food Shelf Life Guide | Know Before You Throw</title>
+    <meta name="description" content="Instantly check how long 125+ household items last after opening. Food safety guide with USDA/FDA data for dairy, meat, produce, condiments, and beauty products.">
+    <meta name="keywords" content="food shelf life, expiration dates, food storage tips, spoilage signs, USDA guidelines, food safety">
+    <meta name="author" content="UseByWhen">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="UseByWhen.com - Your Trusted Food Shelf Life Guide">
+    <meta property="og:description" content="Know before you throw: Instantly check shelf life for dairy, meat, produce, condiments, and beauty products. 125+ items with USDA/FDA data.">
+    <meta property="og:image" content="https://usebywhen.com/images/social-preview.png">
+    <meta property="og:url" content="https://usebywhen.com/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="UseByWhen.com - Food Shelf Life Guide">
+    <meta name="twitter:description" content="Instantly check expiration dates for 125+ household items. USDA/FDA sourced data.">
+    <meta name="twitter:image" content="https://usebywhen.com/images/social-preview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <!-- Schema Markup for Rich Snippets -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does milk last after opening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Opened milk typically lasts 7 days in the refrigerator. Look for sour smell, chunky texture, or yellow tint as signs of spoilage."
+          }
+        },
+        {
+          "@type": "Question", 
+          "name": "How long does cottage cheese last after opening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cottage cheese lasts 7 days after opening when stored in the refrigerator. Look for mold, off smell, or watery separation as signs of spoilage."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does chicken last in the refrigerator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Raw chicken lasts 2 days in the refrigerator, while cooked chicken lasts 4 days. Look for off smell, slimy texture, or color change."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long do eggs last after opening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whole eggs last 35 days in the refrigerator. Test freshness by seeing if they float in water - fresh eggs sink."
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <!-- WebApplication Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "UseByWhen.com",
+      "description": "Food shelf life checker for household items",
+      "url": "https://usebywhen.com",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      }
+    }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f7fa;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+        
+        /* Search Section */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            outline: none;
+        }
+        
+        .search-input:focus {
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .suggestion-item {
+            padding: 12px 20px;
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            font-size: 1rem;
+        }
+        
+        .suggestion-item:hover, .suggestion-item.highlighted {
+            background: #f0f8ff;
+        }
+        
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        
+        /* Category Filters */
+        .category-filters {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .category-btn {
+            background: white;
+            border: 2px solid #ddd;
+            padding: 1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            color: #666;
+        }
+        
+        .category-btn:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .category-btn.active {
+            background: #4f46e5;
+            color: white;
+            border: 2px solid #4f46e5;
+        }
+        
+        .category-btn .icon {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Results Section */
+        .results-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .results-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .results-header h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .results-count {
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .food-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s ease;
+        }
+        
+        .food-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .food-card h3 {
+            color: #333;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .food-detail {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .food-detail strong {
+            color: #667eea;
+            min-width: 90px;
+            flex-shrink: 0;
+        }
+        
+        .category-tag {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+        
+        /* No Results */
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #666;
+        }
+        
+        .no-results h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Mobile Optimization */
+        .category-btn, .search-input, .suggestion-item {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+            
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .food-card {
+                padding: 1rem;
+            }
+            
+            .search-suggestions {
+                max-height: 60vh;
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+            
+            .search-container {
+                width: 100%;
+                padding: 0 15px;
+            }
+            
+            /* Mobile donation section optimization */
+            .donation-section {
+                padding: 3rem 1rem !important;
+            }
+            
+            .donation-section h2 {
+                font-size: 2rem !important;
+            }
+            
+            .donation-section ul {
+                grid-template-columns: 1fr !important;
+                gap: 0.5rem !important;
+                text-align: center !important;
+            }
+            
+            .donation-section a, .donation-footer a {
+                padding: 0.875rem 1rem !important;
+                font-size: 0.95rem !important;
+                min-height: 44px;
+                min-width: 44px;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+            }
+        }
+        
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        
+        /* Top Donation Buttons */
+        .top-donation {
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            z-index: 100;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .top-donation a {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            padding: 8px 16px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        
+        .top-donation a:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+        }
+        
+        .top-donation .support-btn {
+            background: #FFD700;
+            color: #333;
+        }
+        
+        .top-donation .coffee-btn {
+            background: #FF6B6B;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .top-donation {
+                position: static;
+                justify-content: center;
+                margin: 10px 0;
+                padding: 0 20px;
+            }
+            
+            .top-donation a {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <nav style="position: absolute; top: 20px; right: 20px; z-index: 100;">
+        <a href="/blog/" style="color: white; margin-right: 20px; text-decoration: none; font-weight: 500;">Blog</a>
+        <a href="/contact.html" style="color: white; margin-right: 20px; text-decoration: none; font-weight: 500;">Contact</a>
+        <a href="/privacy.html" style="color: white; text-decoration: none; font-weight: 500;">Privacy</a>
+    </nav>
+    
+    <!-- Top Donation Buttons -->
+    <div class="top-donation">
+        <a href="https://donate.stripe.com/9B6eVfgow4fW9HMbFN7Vm07" 
+           onclick="trackDonation('top_5_dollar')" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="support-btn">
+            💝 $5 Support
+        </a>
+        <a href="https://donate.stripe.com/aFcN7c8g9Ag4nsaBJ7Vm08" 
+           onclick="trackDonation('top_10_dollar')" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="coffee-btn">
+            ☕ $10 Coffee
+        </a>
+        <a href="https://donate.stripe.com/7sY9AVdckaEk3jofW37Vm06" 
+           onclick="trackDonation('top_3_dollar')" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="coffee-btn" style="background: #4ECDC4;">
+            🙏 $3 Thanks
+        </a>
+    </div>
+    
+    <!-- Header Section -->
+    <header class="header">
+        <h1>🗓️ UseByWhen</h1>
+        <p>Quick food expiration lookup - Know before you throw!</p>
+        
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="searchInput"
+                placeholder="Search for any food item... (e.g., 'milk', 'chicken', 'apples')"
+                autocomplete="off"
+            >
+            <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+    </header>
+    
+    <!-- Category Filters -->
+    <section class="category-filters">
+        <h2 style="text-align: center; color: #667eea; margin-bottom: 2rem; font-size: 2rem;">🥘 Browse by Category</h2>
+        <div class="category-grid" id="categoryGrid">
+            <button class="category-btn active" data-category="all">
+                <span class="icon">📋</span>
+                <div>All Items</div>
+            </button>
+            <button class="category-btn" data-category="Produce">
+                <span class="icon">🥕</span>
+                <div>Fresh Produce</div>
+            </button>
+            <button class="category-btn" data-category="Meat">
+                <span class="icon">🥩</span>
+                <div>Meat & Seafood</div>
+            </button>
+            <button class="category-btn" data-category="Dairy">
+                <span class="icon">🥛</span>
+                <div>Dairy & Eggs</div>
+            </button>
+            <button class="category-btn" data-category="Bakery">
+                <span class="icon">🍞</span>
+                <div>Bakery & Grains</div>
+            </button>
+            <button class="category-btn" data-category="Condiments">
+                <span class="icon">🍯</span>
+                <div>Condiments</div>
+            </button>
+            <button class="category-btn" data-category="Pantry">
+                <span class="icon">🫙</span>
+                <div>Pantry Staples</div>
+            </button>
+            <button class="category-btn" data-category="Beverages">
+                <span class="icon">🍷</span>
+                <div>Beverages</div>
+            </button>
+            <button class="category-btn" data-category="Leftovers">
+                <span class="icon">🍽️</span>
+                <div>Leftovers</div>
+            </button>
+        </div>
+    </section>
+    
+    <!-- Results Section -->
+    <main class="results-container" id="resultsContainer" style="display: none;">
+        <div class="results-header" id="resultsHeader">
+            <h2 id="resultsTitle">Search Results</h2>
+            <p class="results-count" id="resultsCount"></p>
+        </div>
+        
+        <div class="results-grid" id="resultsGrid"></div>
+    </main>
+
+    <!-- Support UseByWhen Donation Section -->
+    <section class="donation-section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 1rem; text-align: center; margin-top: 3rem;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: white;">💝 Keep UseByWhen Free and Growing!</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9;">
+                22,000+ Reddit users demanded this tool - now it's 100% free with no ads or subscriptions!
+            </p>
+            <div style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 15px; margin-bottom: 2rem; backdrop-filter: blur(10px);">
+                <h3 style="margin-bottom: 1rem; color: white;">🚀 Support Our Mission</h3>
+                <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    Your donations help us expand the database, add new features, and make food safety accessible to everyone!
+                </p>
+                <ul style="list-style: none; padding: 0; margin: 1.5rem 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; text-align: left;">
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: #4CAF50; font-size: 1.2rem;">✓</span>
+                        <span>Add more food items</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: #4CAF50; font-size: 1.2rem;">✓</span>
+                        <span>Mobile app development</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: #4CAF50; font-size: 1.2rem;">✓</span>
+                        <span>Advanced features</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="color: #4CAF50; font-size: 1.2rem;">✓</span>
+                        <span>Server costs coverage</span>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <a href="https://donate.stripe.com/9B6eVfgow4fW9HMbFN7Vm07" 
+                   onclick="trackDonation('main_5_dollar')" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="background: #FFD700; color: #333; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                    💝 Support UseByWhen - $5
+                </a>
+                <a href="https://donate.stripe.com/aFcN7c8g9Ag4nsaBJ7Vm08" 
+                   onclick="trackDonation('main_10_dollar')" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="background: #FF6B6B; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                    🙏 Buy Us Coffee - $10
+                </a>
+                <a href="https://donate.stripe.com/7sY9AVdckaEk3jofW37Vm06" 
+                   onclick="trackDonation('main_3_dollar')" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="background: #4ECDC4; color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; transition: transform 0.3s ease, box-shadow 0.3s ease; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.2);"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.2)'">
+                    🙏 Small Thanks - $3
+                </a>
+                <a href="https://donate.stripe.com/9B6eVfgow4fW9HMbFN7Vm07" 
+                   onclick="trackDonation('main_custom')" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="background: rgba(255,255,255,0.2); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; border: 2px solid white; transition: transform 0.3s ease, box-shadow 0.3s ease; display: inline-block;"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.background='rgba(255,255,255,0.3)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.background='rgba(255,255,255,0.2)'">
+                    🚀 Help Us Grow - $5+
+                </a>
+            </div>
+            <p style="font-size: 0.95rem; opacity: 0.8; max-width: 600px; margin: 0 auto;">
+                Small donations make a big impact! Every contribution helps us serve the community better and keep this tool free for everyone. 
+                <strong>Thank you for supporting food safety! 🌟</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #2c3e50; color: white; padding: 3rem 1rem 2rem; text-align: center; margin-top: 4rem;">
+        <h3 style="color: #ecf0f1; margin-bottom: 1rem;">🗓️ UseByWhen - Your Food Safety Authority</h3>
+        <p style="margin-bottom: 2rem; color: #bdc3c7; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Trusted food shelf life information sourced from USDA and FDA guidelines. Keep your family safe and reduce food waste.
+        </p>
+        
+        <!-- Social Media Links -->
+        <div style="margin: 2rem 0;">
+            <h4 style="color: #ecf0f1; margin-bottom: 1rem;">Follow Us</h4>
+            <nav style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="https://twitter.com/usebywhen" target="_blank" rel="noopener noreferrer" 
+                   style="color: #3498db; text-decoration: none; font-weight: 500;">🐦 Twitter</a>
+                <a href="https://instagram.com/usebywhen" target="_blank" rel="noopener noreferrer" 
+                   style="color: #e91e63; text-decoration: none; font-weight: 500;">📷 Instagram</a>
+                <a href="https://tiktok.com/@usebywhen" target="_blank" rel="noopener noreferrer" 
+                   style="color: #ff4081; text-decoration: none; font-weight: 500;">🎵 TikTok</a>
+                <a href="/contact.html" style="color: #95a5a6; text-decoration: none; font-weight: 500;">📞 Contact</a>
+                <a href="/privacy.html" style="color: #95a5a6; text-decoration: none; font-weight: 500;">🔒 Privacy</a>
+            </nav>
+        </div>
+        
+        <!-- Compact Donation Footer -->
+        <div class="donation-footer" style="margin: 2rem 0; padding: 2rem 0; border-top: 1px solid #34495e; background: rgba(255,255,255,0.05); border-radius: 10px;">
+            <h4 style="color: #ecf0f1; margin-bottom: 1rem;">💝 Love this tool? Support UseByWhen!</h4>
+            <p style="color: #bdc3c7; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                Help us keep this free tool running and add more features! Your support makes a difference.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="https://donate.stripe.com/9B6eVfgow4fW9HMbFN7Vm07" 
+                   onclick="trackDonation('footer_5_dollar')" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="background: #FFD700; color: #333; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: transform 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-2px)'"
+                   onmouseout="this.style.transform='translateY(0)'">
+                    💝 $5 Support
+                </a>
+                <a href="https://donate.stripe.com/aFcN7c8g9Ag4nsaBJ7Vm08" 
+                   onclick="trackDonation('footer_10_dollar')" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="background: #FF6B6B; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: transform 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-2px)'"
+                   onmouseout="this.style.transform='translateY(0)'">
+                    🙏 $10 Coffee
+                </a>
+                <a href="https://donate.stripe.com/7sY9AVdckaEk3jofW37Vm06" 
+                   onclick="trackDonation('footer_3_dollar')" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   style="background: transparent; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 2px solid #4ECDC4; transition: transform 0.3s ease;"
+                   onmouseover="this.style.transform='translateY(-2px)'; this.style.background='rgba(78,205,196,0.2)'"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.background='transparent'">
+                    🙏 $3 Thanks
+                </a>
+            </div>
+        </div>
+        
+        <!-- SEO Footer Content -->
+        <div style="margin: 2rem 0; padding: 2rem 0; border-top: 1px solid #34495e;">
+            <h4 style="color: #ecf0f1; margin-bottom: 1rem;">Popular Food Shelf Life Questions</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; text-align: left; max-width: 800px; margin: 0 auto;">
+                <div>
+                    <h5 style="color: #3498db;">🥛 Dairy Products</h5>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">How long does milk last? Cottage cheese shelf life? Get answers for all dairy items.</p>
+                </div>
+                <div>
+                    <h5 style="color: #e74c3c;">🥩 Meat & Seafood</h5>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">Raw chicken, ground beef, salmon storage times. Keep meat fresh and safe.</p>
+                </div>
+                <div>
+                    <h5 style="color: #27ae60;">🥕 Fresh Produce</h5>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">Fruits and vegetables storage guide. Maximize freshness and nutrition.</p>
+                </div>
+                <div>
+                    <h5 style="color: #f39c12;">🍽️ Leftovers</h5>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">Safe leftover storage times. Pizza, rice, pasta and more.</p>
+                </div>
+            </div>
+        </div>
+        
+        <p style="color: #7f8c8d; font-size: 0.9rem; margin-top: 2rem;">
+            © 2025 UseByWhen - Food Safety Information | Sourced from USDA & FDA Guidelines
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Food Database - 125+ Items
+        const foodDatabase = [
+            // FRUITS
+            { name: 'Apples', days: 30, category: 'Produce', keywords: ['apples', 'apple', 'fruit', 'gala', 'fuji', 'granny smith', 'honeycrisp'], storage: 'Refrigerator', counter_days: 7, spoilage: 'Soft spots, wrinkled skin, brown flesh' },
+            { name: 'Bananas', days: 7, category: 'Produce', keywords: ['bananas', 'banana', 'fruit', 'plantain'], storage: 'Counter', counter_days: 7, fridge_note: 'Skin darkens but fruit stays fresh 5-7 days', spoilage: 'Black color, fermented smell, mold' },
+            { name: 'Oranges', days: 28, category: 'Produce', keywords: ['oranges', 'orange', 'citrus', 'fruit', 'navel', 'valencia'], storage: 'Refrigerator', counter_days: 7, spoilage: 'Soft spots, mold, dry texture' },
+            { name: 'Strawberries', days: 5, category: 'Produce', keywords: ['strawberries', 'strawberry', 'berries', 'berry', 'fruit'], storage: 'Refrigerator', storage_tip: "Don't wash until ready to eat", spoilage: 'Mold, mushy texture, off smell' },
+            { name: 'Blueberries', days: 10, category: 'Produce', keywords: ['blueberries', 'blueberry', 'berries', 'berry', 'fruit'], storage: 'Refrigerator', frozen: '10-12 months', spoilage: 'Mold, shriveled appearance, leaking juice' },
+            { name: 'Grapes', days: 14, category: 'Produce', keywords: ['grapes', 'grape', 'fruit', 'red grapes', 'green grapes'], storage: 'Refrigerator', storage_tip: 'Keep in perforated bag', spoilage: 'Wrinkled, soft, brown spots' },
+            { name: 'Avocados', days: 5, category: 'Produce', keywords: ['avocados', 'avocado', 'fruit', 'hass', 'guacamole'], storage: 'Refrigerator', counter_days: 7, ripening_note: '4-7 days to ripen at room temp', spoilage: 'Very soft, dark spots, rancid smell' },
+            { name: 'Lemons', days: 28, category: 'Produce', keywords: ['lemons', 'lemon', 'citrus', 'fruit'], storage: 'Refrigerator', counter_days: 7, spoilage: 'Soft spots, mold, dry skin' },
+            { name: 'Limes', days: 28, category: 'Produce', keywords: ['limes', 'lime', 'citrus', 'fruit'], storage: 'Refrigerator', counter_days: 7, spoilage: 'Soft spots, mold, dry skin' },
+            { name: 'Pears', days: 7, category: 'Produce', keywords: ['pears', 'pear', 'fruit', 'bartlett', 'bosc'], storage: 'Refrigerator', counter_days: 5, spoilage: 'Very soft, brown spots, fermented smell' },
+            { name: 'Peaches', days: 5, category: 'Produce', keywords: ['peaches', 'peach', 'fruit', 'nectarine'], storage: 'Refrigerator', counter_days: 3, spoilage: 'Very soft, mold, wrinkled skin' },
+            { name: 'Plums', days: 7, category: 'Produce', keywords: ['plums', 'plum', 'fruit', 'stone fruit'], storage: 'Refrigerator', counter_days: 3, spoilage: 'Very soft, mold, fermented smell' },
+            { name: 'Cherries', days: 7, category: 'Produce', keywords: ['cherries', 'cherry', 'fruit', 'bing'], storage: 'Refrigerator', spoilage: 'Soft, mold, brown spots' },
+            { name: 'Raspberries', days: 3, category: 'Produce', keywords: ['raspberries', 'raspberry', 'berries', 'berry'], storage: 'Refrigerator', spoilage: 'Mold, mushy texture, leaking juice' },
+            { name: 'Blackberries', days: 3, category: 'Produce', keywords: ['blackberries', 'blackberry', 'berries', 'berry'], storage: 'Refrigerator', spoilage: 'Mold, mushy texture, leaking juice' },
+            { name: 'Watermelon (whole)', days: 7, category: 'Produce', keywords: ['watermelon', 'melon', 'fruit'], storage: 'Counter', cut_days: 5, spoilage: 'Soft spots, off smell, slimy texture' },
+            { name: 'Cantaloupe', days: 5, category: 'Produce', keywords: ['cantaloupe', 'melon', 'fruit'], storage: 'Counter', cut_days: 3, spoilage: 'Soft spots, mold, fermented smell' },
+            { name: 'Pineapple', days: 5, category: 'Produce', keywords: ['pineapple', 'fruit', 'tropical'], storage: 'Counter', cut_days: 3, spoilage: 'Soft spots, mold, fermented smell' },
+            { name: 'Mango', days: 5, category: 'Produce', keywords: ['mango', 'mangoes', 'fruit', 'tropical'], storage: 'Counter', ripe_fridge: 5, spoilage: 'Very soft, dark spots, fermented smell' },
+            { name: 'Kiwi', days: 7, category: 'Produce', keywords: ['kiwi', 'kiwifruit', 'fruit'], storage: 'Refrigerator', counter_days: 3, spoilage: 'Very soft, mold, wrinkled' },
+
+            // VEGETABLES
+            { name: 'Carrots', days: 28, category: 'Produce', keywords: ['carrots', 'carrot', 'vegetables', 'baby carrots'], storage: 'Refrigerator', storage_tip: 'Remove green tops', spoilage: 'Soft, bendy, white film, bad smell' },
+            { name: 'Broccoli', days: 5, category: 'Produce', keywords: ['broccoli', 'vegetables', 'cruciferous'], storage: 'Refrigerator', storage_tip: "Don't wash until ready to use", spoilage: 'Yellow florets, strong smell, slimy texture' },
+            { name: 'Lettuce', days: 10, category: 'Produce', keywords: ['lettuce', 'greens', 'salad', 'romaine', 'iceberg'], storage: 'Refrigerator', storage_tip: 'Store with paper towel', spoilage: 'Wilting, brown edges, slimy leaves' },
+            { name: 'Spinach', days: 7, category: 'Produce', keywords: ['spinach', 'greens', 'leafy', 'baby spinach'], storage: 'Refrigerator', storage_tip: 'Keep in original container', spoilage: 'Yellowing, slimy texture, bad smell' },
+            { name: 'Bell Peppers', days: 14, category: 'Produce', keywords: ['bell peppers', 'pepper', 'peppers', 'red pepper', 'green pepper'], storage: 'Refrigerator', storage_tip: 'Keep in crisper drawer', spoilage: 'Soft spots, wrinkled skin, mold' },
+            { name: 'Cucumbers', days: 7, category: 'Produce', keywords: ['cucumbers', 'cucumber', 'vegetables'], storage: 'Refrigerator', storage_tip: 'Keep in crisper drawer', spoilage: 'Soft spots, yellowing, slimy texture' },
+            { name: 'Tomatoes', days: 7, category: 'Produce', keywords: ['tomatoes', 'tomato', 'vegetables', 'cherry tomatoes'], storage: 'Counter', ripe_fridge: 5, spoilage: 'Soft spots, mold, wrinkled skin' },
+            { name: 'Onions', days: 90, category: 'Produce', keywords: ['onions', 'onion', 'vegetables', 'red onion', 'white onion'], storage: 'Pantry', cut_days: 10, spoilage: 'Soft spots, sprouting, strong smell' },
+            { name: 'Garlic', days: 180, category: 'Produce', keywords: ['garlic', 'vegetables', 'bulb', 'cloves'], storage: 'Pantry', peeled_days: 7, spoilage: 'Soft spots, sprouting, mold' },
+            { name: 'Potatoes', days: 35, category: 'Produce', keywords: ['potatoes', 'potato', 'vegetables', 'russet'], storage: 'Pantry', storage_tip: 'Keep in cool, dark place', spoilage: 'Green color, sprouting, soft spots' },
+            { name: 'Mushrooms', days: 10, category: 'Produce', keywords: ['mushrooms', 'mushroom', 'vegetables', 'portobello'], storage: 'Refrigerator', storage_tip: 'Keep in original packaging', spoilage: 'Slimy texture, dark spots, strong smell' },
+            { name: 'Celery', days: 14, category: 'Produce', keywords: ['celery', 'vegetables', 'stalk'], storage: 'Refrigerator', storage_tip: 'Wrap in aluminum foil', spoilage: 'Limp, hollow stalks, brown spots' },
+            { name: 'Cauliflower', days: 7, category: 'Produce', keywords: ['cauliflower', 'vegetables', 'cruciferous'], storage: 'Refrigerator', storage_tip: 'Keep in perforated bag', spoilage: 'Brown spots, soft texture, strong smell' },
+
+            // MEAT & SEAFOOD
+            { name: 'Raw Chicken', days: 2, category: 'Meat', keywords: ['chicken', 'poultry', 'raw', 'breast', 'thigh'], storage: 'Refrigerator', frozen: '9 months', cooked: 4, spoilage: 'Off smell, slimy texture, color change' },
+            { name: 'Ground Beef (raw)', days: 2, category: 'Meat', keywords: ['ground beef', 'beef', 'hamburger', 'raw'], storage: 'Refrigerator', frozen: '4 months', cooked: 4, spoilage: 'Brown/gray color, off smell, slimy texture' },
+            { name: 'Steak', days: 5, category: 'Meat', keywords: ['steak', 'beef', 'ribeye', 'sirloin'], storage: 'Refrigerator', frozen: '12 months', cooked: 4, spoilage: 'Brown/gray color, off smell, slimy texture' },
+            { name: 'Salmon', days: 2, category: 'Meat', keywords: ['salmon', 'fish', 'seafood', 'raw'], storage: 'Refrigerator', frozen: '3 months', cooked: 4, spoilage: 'Fishy smell, slimy texture, discoloration' },
+            { name: 'Shrimp', days: 2, category: 'Meat', keywords: ['shrimp', 'prawns', 'seafood', 'shellfish'], storage: 'Refrigerator', frozen: '6 months', cooked: 4, spoilage: 'Black spots, ammonia smell, slimy texture' },
+            { name: 'Pork Chops', days: 5, category: 'Meat', keywords: ['pork chops', 'pork', 'chops', 'raw'], storage: 'Refrigerator', frozen: '6 months', cooked: 4, spoilage: 'Off smell, slimy texture, gray color' },
+            { name: 'Turkey', days: 2, category: 'Meat', keywords: ['turkey', 'poultry', 'ground turkey'], storage: 'Refrigerator', frozen: '4 months', cooked: 4, spoilage: 'Off smell, slimy texture, gray color' },
+            { name: 'Bacon', days: 7, category: 'Meat', keywords: ['bacon', 'pork', 'breakfast'], storage: 'Refrigerator', opened: 7, frozen: '6 months', spoilage: 'Slimy texture, off smell, discoloration' },
+            { name: 'Deli Meat (opened)', days: 5, category: 'Meat', keywords: ['deli meat', 'sliced', 'turkey', 'ham'], storage: 'Refrigerator', spoilage: 'Slimy texture, off smell, discoloration' },
+            { name: 'Hot Dogs', days: 14, category: 'Meat', keywords: ['hot dogs', 'frankfurters', 'wieners'], storage: 'Refrigerator', opened: 7, frozen: '2 months', spoilage: 'Slimy texture, off smell, discoloration' },
+
+            // DAIRY & EGGS
+            { name: 'Milk (opened)', days: 7, category: 'Dairy', keywords: ['milk', 'dairy', 'whole', 'skim', '2%'], storage: 'Refrigerator', spoilage: 'Sour smell, chunky texture, yellow tint' },
+            { name: 'Eggs (whole)', days: 35, category: 'Dairy', keywords: ['eggs', 'egg', 'whole', 'fresh'], storage: 'Refrigerator', spoilage: 'Float in water, sulfur smell, cracked shell' },
+            { name: 'Butter', days: 90, category: 'Dairy', keywords: ['butter', 'dairy', 'salted', 'unsalted'], storage: 'Refrigerator', frozen: '12 months', spoilage: 'Rancid smell, discoloration, mold' },
+            { name: 'Cheese (hard)', days: 28, category: 'Dairy', keywords: ['cheese', 'cheddar', 'swiss', 'hard cheese'], storage: 'Refrigerator', spoilage: 'Mold, off smell, slimy texture' },
+            { name: 'Yogurt', days: 14, category: 'Dairy', keywords: ['yogurt', 'yoghurt', 'dairy', 'plain'], storage: 'Refrigerator', spoilage: 'Mold, excessive separation, off smell' },
+            { name: 'Cottage Cheese', days: 7, category: 'Dairy', keywords: ['cottage cheese', 'cheese', 'dairy'], storage: 'Refrigerator', spoilage: 'Mold, off smell, watery separation' },
+            { name: 'Cream Cheese', days: 10, category: 'Dairy', keywords: ['cream cheese', 'cheese', 'dairy', 'philadelphia'], storage: 'Refrigerator', spoilage: 'Mold, sour smell, separation' },
+            { name: 'Sour Cream', days: 10, category: 'Dairy', keywords: ['sour cream', 'dairy', 'cream'], storage: 'Refrigerator', spoilage: 'Mold, off smell, separation' },
+            { name: 'Heavy Cream', days: 7, category: 'Dairy', keywords: ['heavy cream', 'whipping cream', 'dairy'], storage: 'Refrigerator', spoilage: 'Sour smell, chunky texture, curdling' },
+
+            // BAKERY & GRAINS
+            { name: 'Bread (opened)', days: 7, category: 'Bakery', keywords: ['bread', 'loaf', 'sliced', 'white', 'wheat'], storage: 'Counter', frozen: '3 months', spoilage: 'Mold, stale texture, off smell' },
+            { name: 'Bagels', days: 7, category: 'Bakery', keywords: ['bagels', 'bagel', 'everything', 'plain'], storage: 'Counter', frozen: '6 months', spoilage: 'Mold, hard texture, stale' },
+            { name: 'Tortillas', days: 7, category: 'Bakery', keywords: ['tortillas', 'tortilla', 'flour', 'corn'], storage: 'Pantry', opened_fridge: '3-4 weeks', spoilage: 'Mold, sour smell, hard edges' },
+            { name: 'Crackers', days: 180, category: 'Bakery', keywords: ['crackers', 'saltines', 'ritz'], storage: 'Pantry', opened: '2-4 weeks', spoilage: 'Stale texture, rancid smell' },
+            { name: 'Cereal', days: 365, category: 'Bakery', keywords: ['cereal', 'breakfast', 'cornflakes'], storage: 'Pantry', opened: '2-3 months', spoilage: 'Stale taste, bugs, rancid smell' },
+
+            // CONDIMENTS & SAUCES
+            { name: 'Ketchup (opened)', days: 180, category: 'Condiments', keywords: ['ketchup', 'catsup', 'tomato sauce'], storage: 'Refrigerator', spoilage: 'Mold, off smell, separation, darkening' },
+            { name: 'Mayonnaise (opened)', days: 60, category: 'Condiments', keywords: ['mayonnaise', 'mayo', 'spread'], storage: 'Refrigerator', spoilage: 'Separation, off smell, mold, color change' },
+            { name: 'Mustard', days: 365, category: 'Condiments', keywords: ['mustard', 'yellow', 'dijon', 'honey mustard'], storage: 'Refrigerator', spoilage: 'Separation, off smell, color change' },
+            { name: 'Hot Sauce', days: 1095, category: 'Condiments', keywords: ['hot sauce', 'tabasco', 'sriracha'], storage: 'Pantry', spoilage: 'Color change, off smell, mold' },
+            { name: 'Soy Sauce', days: 1095, category: 'Condiments', keywords: ['soy sauce', 'soya', 'tamari'], storage: 'Pantry', spoilage: 'Mold, off smell, cloudy appearance' },
+            { name: 'BBQ Sauce', days: 120, category: 'Condiments', keywords: ['bbq sauce', 'barbecue', 'sauce'], storage: 'Refrigerator', spoilage: 'Mold, off smell, separation' },
+            { name: 'Salsa (opened)', days: 14, category: 'Condiments', keywords: ['salsa', 'sauce', 'dip', 'mild'], storage: 'Refrigerator', spoilage: 'Mold, off smell, separation, fizzy texture' },
+            { name: 'Honey', days: 99999, category: 'Condiments', keywords: ['honey', 'sweetener', 'natural'], storage: 'Pantry', note: 'Never expires', spoilage: 'Crystallization is normal, not spoilage' },
+
+            // PANTRY STAPLES
+            { name: 'Rice (dry)', days: 1460, category: 'Pantry', keywords: ['rice', 'white rice', 'brown rice'], storage: 'Pantry', spoilage: 'Bugs, off smell, mold' },
+            { name: 'Pasta (dry)', days: 730, category: 'Pantry', keywords: ['pasta', 'spaghetti', 'macaroni'], storage: 'Pantry', spoilage: 'Bugs, off smell, discoloration' },
+            { name: 'Flour', days: 240, category: 'Pantry', keywords: ['flour', 'all purpose', 'bread flour'], storage: 'Pantry', spoilage: 'Bugs, off smell, mold' },
+            { name: 'Sugar', days: 99999, category: 'Pantry', keywords: ['sugar', 'white sugar', 'granulated'], storage: 'Pantry', note: 'Never expires', spoilage: 'Hardening is normal, not spoilage' },
+            { name: 'Cooking Oil', days: 730, category: 'Pantry', keywords: ['oil', 'vegetable oil', 'olive oil'], storage: 'Pantry', opened: '6 months', spoilage: 'Rancid smell, thick texture, off taste' },
+            { name: 'Canned Beans', days: 1095, category: 'Pantry', keywords: ['beans', 'canned', 'black beans'], storage: 'Pantry', opened: '4 days refrigerated', spoilage: 'Bulging can, rust, off smell when opened' },
+
+            // BEVERAGES
+            { name: 'Orange Juice', days: 7, category: 'Beverages', keywords: ['orange juice', 'oj', 'juice'], storage: 'Refrigerator', unopened: '10-14 days past date', spoilage: 'Off smell, fermentation, mold, fizzy texture' },
+            { name: 'Apple Juice', days: 10, category: 'Beverages', keywords: ['apple juice', 'juice', 'cider'], storage: 'Refrigerator', spoilage: 'Fermentation, off smell, mold, fizzy texture' },
+            { name: 'Wine (opened)', days: 5, category: 'Beverages', keywords: ['wine', 'red wine', 'white wine'], storage: 'Refrigerator', spoilage: 'Vinegar smell, off taste, color change' },
+            { name: 'Beer', days: 1, category: 'Beverages', keywords: ['beer', 'lager', 'ale', 'ipa'], storage: 'Refrigerator', unopened: '6-9 months', spoilage: 'Flat taste, off smell, cloudy appearance' },
+            { name: 'Soda', days: 2, category: 'Beverages', keywords: ['soda', 'pop', 'coke', 'pepsi'], storage: 'Refrigerator', unopened: '6-9 months pantry', spoilage: 'Flat taste, off smell' },
+            { name: 'Coffee (opened)', days: 14, category: 'Beverages', keywords: ['coffee', 'beans', 'ground'], storage: 'Pantry', spoilage: 'Stale smell, loss of aroma, flat taste' },
+
+            // LEFTOVERS
+            { name: 'Leftover Pizza', days: 4, category: 'Leftovers', keywords: ['pizza', 'leftovers', 'slice'], storage: 'Refrigerator', frozen: '2 months', spoilage: 'Mold, off smell, dried out' },
+            { name: 'Cooked Rice', days: 6, category: 'Leftovers', keywords: ['rice', 'cooked', 'leftovers'], storage: 'Refrigerator', spoilage: 'Hard texture, off smell, mold' },
+            { name: 'Cooked Pasta', days: 5, category: 'Leftovers', keywords: ['pasta', 'cooked', 'leftovers', 'spaghetti'], storage: 'Refrigerator', spoilage: 'Slimy texture, off smell, mold' },
+            { name: 'Soup', days: 4, category: 'Leftovers', keywords: ['soup', 'stew', 'broth', 'leftovers'], storage: 'Refrigerator', frozen: '3 months', spoilage: 'Off smell, mold, separation' },
+            { name: 'Cooked Chicken', days: 4, category: 'Leftovers', keywords: ['chicken', 'cooked', 'leftovers'], storage: 'Refrigerator', frozen: '4 months', spoilage: 'Off smell, slimy texture, mold' },
+            { name: 'Casserole', days: 4, category: 'Leftovers', keywords: ['casserole', 'leftovers', 'baked'], storage: 'Refrigerator', frozen: '3 months', spoilage: 'Off smell, mold, dried edges' },
+            { name: 'Chinese Takeout', days: 4, category: 'Leftovers', keywords: ['chinese', 'takeout', 'leftovers', 'asian'], storage: 'Refrigerator', spoilage: 'Off smell, mold, dried out' },
+            { name: 'Cooked Vegetables', days: 4, category: 'Leftovers', keywords: ['vegetables', 'cooked', 'leftovers', 'roasted'], storage: 'Refrigerator', spoilage: 'Slimy texture, off smell, mold' },
+            { name: 'Chili', days: 4, category: 'Leftovers', keywords: ['chili', 'stew', 'leftovers'], storage: 'Refrigerator', frozen: '6 months', spoilage: 'Off smell, mold, separation' },
+            
+            // ADDITIONAL PRODUCE
+            { name: 'Asparagus', days: 4, category: 'Produce', keywords: ['asparagus', 'vegetables', 'spears'], storage: 'Refrigerator', storage_tip: 'Stand upright in water', spoilage: 'Limp stalks, slimy tips, off smell' },
+            { name: 'Brussels Sprouts', days: 7, category: 'Produce', keywords: ['brussels sprouts', 'vegetables', 'sprouts'], storage: 'Refrigerator', spoilage: 'Yellow leaves, soft texture, strong smell' },
+            { name: 'Cabbage', days: 60, category: 'Produce', keywords: ['cabbage', 'vegetables', 'red cabbage', 'green cabbage'], storage: 'Refrigerator', cut_days: 7, spoilage: 'Soft spots, discoloration, off smell' },
+            { name: 'Green Beans', days: 7, category: 'Produce', keywords: ['green beans', 'beans', 'vegetables', 'string beans'], storage: 'Refrigerator', spoilage: 'Brown spots, limp texture, mold' },
+            { name: 'Corn on the Cob', days: 3, category: 'Produce', keywords: ['corn', 'vegetables', 'sweet corn'], storage: 'Refrigerator', storage_tip: 'Keep husks on until ready to cook', spoilage: 'Dry kernels, mold, sour smell' },
+            { name: 'Eggplant', days: 7, category: 'Produce', keywords: ['eggplant', 'vegetables', 'aubergine'], storage: 'Refrigerator', spoilage: 'Soft spots, brown flesh, wrinkled skin' },
+            { name: 'Ginger', days: 30, category: 'Produce', keywords: ['ginger', 'vegetables', 'root'], storage: 'Refrigerator', spoilage: 'Soft spots, mold, wrinkled skin' },
+            { name: 'Kale', days: 7, category: 'Produce', keywords: ['kale', 'greens', 'leafy', 'vegetables'], storage: 'Refrigerator', spoilage: 'Yellow leaves, wilting, slimy texture' },
+            { name: 'Beets', days: 14, category: 'Produce', keywords: ['beets', 'beet', 'vegetables', 'beetroot'], storage: 'Refrigerator', spoilage: 'Soft texture, mold, wrinkled skin' },
+            { name: 'Radishes', days: 14, category: 'Produce', keywords: ['radishes', 'radish', 'vegetables'], storage: 'Refrigerator', spoilage: 'Soft texture, black spots, off smell' },
+            { name: 'Scallions', days: 7, category: 'Produce', keywords: ['scallions', 'green onions', 'spring onions'], storage: 'Refrigerator', spoilage: 'Slimy texture, yellowing, off smell' },
+            { name: 'Zucchini', days: 5, category: 'Produce', keywords: ['zucchini', 'vegetables', 'squash'], storage: 'Refrigerator', spoilage: 'Soft spots, wrinkled skin, mold' },
+            { name: 'Pomegranate', days: 60, category: 'Produce', keywords: ['pomegranate', 'fruit'], storage: 'Refrigerator', seeds_days: 5, spoilage: 'Dry skin, mold, soft spots' },
+            { name: 'Grapefruit', days: 21, category: 'Produce', keywords: ['grapefruit', 'citrus', 'fruit'], storage: 'Refrigerator', counter_days: 7, spoilage: 'Soft spots, mold, dry texture' },
+            
+            // ADDITIONAL MEAT & SEAFOOD
+            { name: 'Lamb Chops', days: 5, category: 'Meat', keywords: ['lamb', 'chops', 'raw', 'meat'], storage: 'Refrigerator', frozen: '9 months', cooked: 4, spoilage: 'Off smell, slimy texture, discoloration' },
+            { name: 'Sausages (raw)', days: 2, category: 'Meat', keywords: ['sausages', 'sausage', 'bratwurst', 'italian'], storage: 'Refrigerator', frozen: '2 months', cooked: 4, spoilage: 'Off smell, slimy texture, gray color' },
+            { name: 'Tuna (fresh)', days: 2, category: 'Meat', keywords: ['tuna', 'fish', 'seafood', 'raw'], storage: 'Refrigerator', frozen: '3 months', cooked: 4, spoilage: 'Fishy smell, slimy texture, discoloration' },
+            { name: 'Scallops', days: 2, category: 'Meat', keywords: ['scallops', 'seafood', 'shellfish', 'raw'], storage: 'Refrigerator', frozen: '3 months', cooked: 4, spoilage: 'Ammonia smell, slimy texture, discoloration' },
+            { name: 'Crab', days: 2, category: 'Meat', keywords: ['crab', 'seafood', 'shellfish', 'raw'], storage: 'Refrigerator', frozen: '3 months', cooked: 4, spoilage: 'Ammonia smell, slimy texture, discoloration' },
+            { name: 'Lobster', days: 2, category: 'Meat', keywords: ['lobster', 'seafood', 'shellfish', 'raw'], storage: 'Refrigerator', frozen: '3 months', cooked: 4, spoilage: 'Ammonia smell, slimy texture, discoloration' },
+            { name: 'Ground Turkey', days: 2, category: 'Meat', keywords: ['ground turkey', 'turkey', 'poultry', 'raw'], storage: 'Refrigerator', frozen: '4 months', cooked: 4, spoilage: 'Off smell, slimy texture, gray color' },
+            
+            // ADDITIONAL DAIRY ITEMS
+            { name: 'Greek Yogurt', days: 7, category: 'Dairy', keywords: ['greek yogurt', 'yogurt', 'dairy', 'plain'], storage: 'Refrigerator', unopened: '1-2 weeks past date', spoilage: 'Mold, off smell, excessive liquid' },
+            { name: 'Mozzarella', days: 7, category: 'Dairy', keywords: ['mozzarella', 'cheese', 'dairy', 'fresh'], storage: 'Refrigerator', spoilage: 'Mold, sour smell, slimy texture' },
+            { name: 'Soft Cheese (opened)', days: 7, category: 'Dairy', keywords: ['soft cheese', 'brie', 'camembert', 'goat cheese'], storage: 'Refrigerator', spoilage: 'Mold, off smell, slimy texture' },
+            { name: 'Blue Cheese', days: 21, category: 'Dairy', keywords: ['blue cheese', 'bleu', 'roquefort', 'gorgonzola'], storage: 'Refrigerator', spoilage: 'Ammonia smell, excessive mold, slimy texture' },
+            { name: 'Ricotta Cheese (opened)', days: 5, category: 'Dairy', keywords: ['ricotta', 'cheese', 'dairy'], storage: 'Refrigerator', spoilage: 'Mold, off smell, watery separation' },
+            { name: 'String Cheese', days: 7, category: 'Dairy', keywords: ['string cheese', 'mozzarella', 'snack'], storage: 'Refrigerator', spoilage: 'Mold, off smell, slimy texture' },
+            { name: 'Half and Half', days: 7, category: 'Dairy', keywords: ['half and half', 'cream', 'dairy', 'coffee'], storage: 'Refrigerator', spoilage: 'Sour smell, chunky texture, separation' },
+            { name: 'Whipped Cream', days: 30, category: 'Dairy', keywords: ['whipped cream', 'cool whip', 'dairy'], storage: 'Refrigerator', spoilage: 'Watery texture, off smell, mold' },
+            { name: 'Egg Whites', days: 4, category: 'Dairy', keywords: ['egg whites', 'eggs', 'whites', 'liquid'], storage: 'Refrigerator', spoilage: 'Off smell, cloudy appearance, mold' },
+            { name: 'Almond Milk', days: 10, category: 'Dairy', keywords: ['almond milk', 'plant milk', 'non-dairy'], storage: 'Refrigerator', unopened: 'Months in pantry', spoilage: 'Sour smell, chunky texture, separation' },
+            { name: 'Oat Milk', days: 10, category: 'Dairy', keywords: ['oat milk', 'plant milk', 'non-dairy'], storage: 'Refrigerator', spoilage: 'Sour smell, chunky texture, separation' },
+            
+            // ADDITIONAL BAKERY ITEMS
+            { name: 'Muffins', days: 3, category: 'Bakery', keywords: ['muffins', 'muffin', 'blueberry', 'chocolate chip'], storage: 'Counter', frozen: '3 months', spoilage: 'Mold, stale texture, off smell' },
+            { name: 'Croissants', days: 2, category: 'Bakery', keywords: ['croissants', 'croissant', 'pastry', 'french'], storage: 'Counter', frozen: '2 months', spoilage: 'Stale texture, mold, rancid butter smell' },
+            { name: 'Donuts', days: 2, category: 'Bakery', keywords: ['donuts', 'doughnuts', 'glazed', 'filled'], storage: 'Counter', spoilage: 'Stale texture, mold, rancid oil smell' },
+            { name: 'Cookies (store-bought)', days: 30, category: 'Bakery', keywords: ['cookies', 'cookie', 'chocolate chip', 'oreos'], storage: 'Pantry', opened: '2 weeks', spoilage: 'Stale texture, rancid smell' },
+            { name: 'Cake', days: 3, category: 'Bakery', keywords: ['cake', 'birthday cake', 'frosted'], storage: 'Counter', refrigerated: '7 days', spoilage: 'Mold, stale texture, off smell' },
+            { name: 'Hamburger Buns', days: 7, category: 'Bakery', keywords: ['hamburger buns', 'buns', 'burger', 'rolls'], storage: 'Counter', frozen: '3 months', spoilage: 'Mold, stale texture' },
+            { name: 'Hot Dog Buns', days: 7, category: 'Bakery', keywords: ['hot dog buns', 'buns', 'rolls'], storage: 'Counter', frozen: '3 months', spoilage: 'Mold, stale texture' },
+            { name: 'English Muffins', days: 14, category: 'Bakery', keywords: ['english muffins', 'muffin', 'breakfast'], storage: 'Counter', frozen: '6 months', spoilage: 'Mold, stale texture' },
+            { name: 'Pita Bread', days: 7, category: 'Bakery', keywords: ['pita', 'pita bread', 'flatbread'], storage: 'Counter', frozen: '3 months', spoilage: 'Mold, stale texture, hard' },
+            { name: 'Naan Bread', days: 3, category: 'Bakery', keywords: ['naan', 'indian bread', 'flatbread'], storage: 'Counter', frozen: '3 months', spoilage: 'Mold, stale texture, hard' },
+            
+            // ADDITIONAL CONDIMENTS
+            { name: 'Peanut Butter', days: 90, category: 'Condiments', keywords: ['peanut butter', 'pb', 'jif', 'skippy'], storage: 'Pantry', opened_natural: '2 months refrigerated', spoilage: 'Rancid smell, mold, oil separation' },
+            { name: 'Jelly/Jam', days: 365, category: 'Condiments', keywords: ['jelly', 'jam', 'preserves', 'strawberry'], storage: 'Refrigerator', spoilage: 'Mold, fermentation, off smell' },
+            { name: 'Maple Syrup', days: 365, category: 'Condiments', keywords: ['maple syrup', 'syrup', 'pancake', 'real maple'], storage: 'Refrigerator', spoilage: 'Mold, off smell, cloudy appearance' },
+            { name: 'Ranch Dressing', days: 60, category: 'Condiments', keywords: ['ranch', 'dressing', 'salad dressing'], storage: 'Refrigerator', spoilage: 'Separation, off smell, mold' },
+            { name: 'Italian Dressing', days: 90, category: 'Condiments', keywords: ['italian dressing', 'salad dressing', 'vinaigrette'], storage: 'Refrigerator', spoilage: 'Separation, off smell, cloudy appearance' },
+            
+            // ADDITIONAL PANTRY ITEMS  
+            { name: 'Canned Tomatoes', days: 730, category: 'Pantry', keywords: ['tomatoes', 'canned', 'crushed', 'diced'], storage: 'Pantry', opened: '7 days refrigerated', spoilage: 'Bulging can, rust, off smell when opened' },
+            { name: 'Nuts', days: 180, category: 'Pantry', keywords: ['nuts', 'almonds', 'peanuts', 'walnuts'], storage: 'Pantry', refrigerated: '12 months', spoilage: 'Rancid smell, bitter taste, mold' },
+            { name: 'Chips', days: 60, category: 'Pantry', keywords: ['chips', 'potato chips', 'tortilla chips'], storage: 'Pantry', opened: '1-2 weeks', spoilage: 'Stale taste, rancid smell' },
+            
+            // ADDITIONAL BEVERAGES
+            { name: 'Sports Drinks', days: 5, category: 'Beverages', keywords: ['gatorade', 'powerade', 'sports drink'], storage: 'Refrigerator', unopened: '9 months pantry', spoilage: 'Off taste, mold, separation' },
+            { name: 'Tea (brewed)', days: 5, category: 'Beverages', keywords: ['tea', 'iced tea', 'green tea', 'black tea'], storage: 'Refrigerator', spoilage: 'Cloudy appearance, off smell, mold' },
+            { name: 'Coconut Water', days: 3, category: 'Beverages', keywords: ['coconut water', 'coconut', 'hydration'], storage: 'Refrigerator', spoilage: 'Sour smell, fizzy texture, mold' },
+            { name: 'Kombucha', days: 7, category: 'Beverages', keywords: ['kombucha', 'fermented tea', 'probiotic'], storage: 'Refrigerator', spoilage: 'Over-fermentation, vinegary taste, mold' }
+        ];
+
+        // App State
+        let currentFilter = 'all';
+        let currentSearchQuery = '';
+        let filteredItems = [...foodDatabase];
+        let selectedSuggestionIndex = -1;
+
+        // DOM Elements
+        const searchInput = document.getElementById('searchInput');
+        const searchSuggestions = document.getElementById('searchSuggestions');
+        const categoryGrid = document.getElementById('categoryGrid');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const resultsTitle = document.getElementById('resultsTitle');
+        const resultsCount = document.getElementById('resultsCount');
+        const resultsGrid = document.getElementById('resultsGrid');
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            // Show all items by default
+            filterItems();
+            showResults();
+        });
+
+        function setupEventListeners() {
+            // Search input
+            searchInput.addEventListener('input', handleSearchInput);
+            searchInput.addEventListener('keydown', handleSearchKeydown);
+            
+            // Category buttons
+            categoryGrid.addEventListener('click', handleCategoryClick);
+            
+            // Click outside to close suggestions
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.search-container')) {
+                    hideSuggestions();
+                }
+            });
+        }
+
+        function handleSearchInput(e) {
+            currentSearchQuery = e.target.value.trim();
+            selectedSuggestionIndex = -1;
+            
+            if (currentSearchQuery.length > 0) {
+                // Clear category filter when user starts typing
+                clearCategoryFilter();
+                showSuggestions();
+            } else {
+                hideSuggestions();
+                hideResults();
+            }
+        }
+
+        function handleSearchKeydown(e) {
+            const suggestions = searchSuggestions.querySelectorAll('.suggestion-item');
+            
+            if (e.key === 'ArrowDown') {
+                e.preventDefault();
+                selectedSuggestionIndex = Math.min(selectedSuggestionIndex + 1, suggestions.length - 1);
+                updateSuggestionHighlight();
+            } else if (e.key === 'ArrowUp') {
+                e.preventDefault();
+                selectedSuggestionIndex = Math.max(selectedSuggestionIndex - 1, -1);
+                updateSuggestionHighlight();
+            } else if (e.key === 'Enter') {
+                e.preventDefault();
+                if (selectedSuggestionIndex >= 0 && suggestions[selectedSuggestionIndex]) {
+                    selectSuggestion(suggestions[selectedSuggestionIndex].textContent);
+                } else if (currentSearchQuery.length > 0) {
+                    hideSuggestions();
+                    filterItems();
+                    showResults();
+                }
+            } else if (e.key === 'Escape') {
+                hideSuggestions();
+            }
+        }
+
+        function showSuggestions() {
+            const matches = searchForItems(currentSearchQuery, 6);
+            
+            if (matches.length > 0) {
+                searchSuggestions.innerHTML = matches
+                    .map(item => `<div class="suggestion-item">${item.name}</div>`)
+                    .join('');
+                searchSuggestions.style.display = 'block';
+                
+                // Add click listeners to suggestions
+                searchSuggestions.querySelectorAll('.suggestion-item').forEach(item => {
+                    item.addEventListener('click', () => selectSuggestion(item.textContent));
+                });
+            } else {
+                hideSuggestions();
+            }
+        }
+
+        function hideSuggestions() {
+            searchSuggestions.style.display = 'none';
+            selectedSuggestionIndex = -1;
+        }
+
+        function updateSuggestionHighlight() {
+            const suggestions = searchSuggestions.querySelectorAll('.suggestion-item');
+            suggestions.forEach((item, index) => {
+                item.classList.toggle('highlighted', index === selectedSuggestionIndex);
+            });
+        }
+
+        function selectSuggestion(itemName) {
+            searchInput.value = itemName;
+            currentSearchQuery = itemName;
+            hideSuggestions();
+            filterItems();
+            showResults();
+        }
+
+        function handleCategoryClick(e) {
+            const button = e.target.closest('.category-btn');
+            if (!button) return;
+
+            // Update active category
+            categoryGrid.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            currentFilter = button.dataset.category;
+            currentSearchQuery = '';
+            searchInput.value = '';
+            hideSuggestions();
+            filterItems();
+            showResults();
+        }
+
+        function searchForItems(query, limit = null) {
+            const searchQuery = query.toLowerCase().trim();
+            if (!searchQuery) return [];
+            
+            // Score each item based on relevance
+            const scoredItems = foodDatabase.map(item => {
+                const itemName = item.name.toLowerCase();
+                const keywords = item.keywords.join(' ').toLowerCase();
+                let score = 0;
+                
+                // Priority 1: Exact name match (score: 1.0)
+                if (itemName === searchQuery) {
+                    score = 1.0;
+                }
+                // Priority 2: Name starts with search term (score: 0.9)
+                else if (itemName.startsWith(searchQuery)) {
+                    score = 0.9;
+                }
+                // Priority 3: Individual word in name starts with search term (score: 0.8)
+                else if (itemName.split(' ').some(word => word.startsWith(searchQuery))) {
+                    score = 0.8;
+                }
+                // Priority 4: Keywords start with search term (score: 0.7)
+                else if (item.keywords.some(keyword => keyword.toLowerCase().startsWith(searchQuery))) {
+                    score = 0.7;
+                }
+                // Priority 5: Name contains search term (score: 0.5)
+                else if (itemName.includes(searchQuery)) {
+                    score = 0.5;
+                }
+                // Priority 6: Keywords contain search term (score: 0.3)
+                else if (keywords.includes(searchQuery)) {
+                    score = 0.3;
+                }
+                
+                return { item, score };
+            });
+            
+            // Filter out non-matches and sort by score (highest first), then by name
+            const matches = scoredItems
+                .filter(scored => scored.score > 0)
+                .sort((a, b) => {
+                    if (b.score !== a.score) {
+                        return b.score - a.score; // Higher score first
+                    }
+                    return a.item.name.localeCompare(b.item.name); // Alphabetical if same score
+                })
+                .map(scored => scored.item);
+            
+            return limit ? matches.slice(0, limit) : matches;
+        }
+
+        function filterItems() {
+            let items = [];
+
+            // If search query exists, ALWAYS search the full database
+            if (currentSearchQuery) {
+                items = searchForItems(currentSearchQuery);
+                // Note: When searching, we ignore category filters to ensure full results
+            }
+            // If category filter is 'all', show all items
+            else if (currentFilter === 'all') {
+                items = [...foodDatabase];
+            }
+            // If specific category filter (and no search), show category items
+            else if (currentFilter) {
+                items = foodDatabase.filter(item => item.category === currentFilter);
+            }
+            // No search or category - show all items (fallback)
+            else {
+                items = [...foodDatabase];
+            }
+
+            filteredItems = items;
+            renderResults();
+        }
+
+        function renderResults() {
+            // Update header based on current state
+            let title = '';
+            if (currentSearchQuery && currentFilter && currentFilter !== 'all') {
+                title = `${currentFilter} Items matching "${currentSearchQuery}"`;
+            } else if (currentSearchQuery) {
+                title = `Search Results for "${currentSearchQuery}"`;
+            } else if (currentFilter === 'all') {
+                title = 'All Food Items';
+            } else if (currentFilter) {
+                title = `${currentFilter} Items`;
+            } else {
+                title = 'All Food Items';
+            }
+            
+            resultsTitle.textContent = title;
+            resultsCount.textContent = `${filteredItems.length} items found`;
+
+            // Render items
+            if (filteredItems.length === 0) {
+                resultsGrid.innerHTML = `
+                    <div class="no-results">
+                        <h3>No items found</h3>
+                        <p>Try adjusting your search or selecting a different category</p>
+                    </div>
+                `;
+            } else {
+                resultsGrid.innerHTML = filteredItems
+                    .map(item => createFoodCard(item))
+                    .join('');
+            }
+        }
+        
+        function showResults() {
+            resultsContainer.style.display = 'block';
+        }
+        
+        function hideResults() {
+            resultsContainer.style.display = 'none';
+        }
+        
+        function clearCategoryFilter() {
+            // Reset to 'All Items' filter
+            currentFilter = 'all';
+            
+            // Update visual state of category buttons
+            categoryGrid.querySelectorAll('.category-btn').forEach(btn => btn.classList.remove('active'));
+            const allItemsBtn = categoryGrid.querySelector('[data-category="all"]');
+            if (allItemsBtn) {
+                allItemsBtn.classList.add('active');
+            }
+        }
+
+        function createFoodCard(item) {
+            return `
+                <div class="food-card">
+                    <h3>${item.name}</h3>
+                    
+                    <div class="food-detail">
+                        <strong>Storage:</strong>
+                        <span>${item.storage}</span>
+                    </div>
+                    
+                    <div class="food-detail">
+                        <strong>Shelf Life:</strong>
+                        <span>${item.days === 99999 ? 'Never expires' : `${item.days} days`}</span>
+                    </div>
+                    
+                    ${item.counter_days ? `
+                        <div class="food-detail">
+                            <strong>Counter:</strong>
+                            <span>${item.counter_days} days</span>
+                        </div>
+                    ` : ''}
+                    
+                    ${item.frozen ? `
+                        <div class="food-detail">
+                            <strong>Frozen:</strong>
+                            <span>${item.frozen}</span>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="food-detail">
+                        <strong>Spoilage:</strong>
+                        <span>${item.spoilage}</span>
+                    </div>
+                    
+                    ${item.storage_tip ? `
+                        <div class="food-detail">
+                            <strong>Tip:</strong>
+                            <span>${item.storage_tip}</span>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="category-tag">${item.category}</div>
+                </div>
+            `;
+        }
+
+        // Donation Analytics Tracking
+        function trackDonation(type) {
+            // Track with Google Analytics if available
+            if (typeof gtag === 'function') {
+                gtag('event', 'donation_click', {
+                    donation_type: type,
+                    event_category: 'support',
+                    event_label: 'paypal_donation'
+                });
+            }
+            
+            // Alternative tracking methods can be added here
+            console.log('Donation button clicked:', type);
+        }
+    </script>
+</body>
+</html>

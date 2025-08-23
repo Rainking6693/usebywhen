@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary SEO Meta Tags -->
+  <title>Food Storage & Expiration Guides Blog | UseByWhen</title>
+  <meta name="description" content="Expert tips on keeping food fresh longer, reducing waste, and proper storage methods. Learn about expiration dates, pantry organization, and food safety.">
+  <meta name="keywords" content="food storage blog, expiration date guides, food safety tips, pantry organization, reduce food waste">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://usebywhen.com/blog/">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Food Storage & Expiration Guides Blog | UseByWhen">
+  <meta property="og:description" content="Expert tips on keeping food fresh longer and reducing waste with proper storage methods.">
+  <meta property="og:image" content="https://usebywhen.com/assets/blog-og-image.jpg">
+  <meta property="og:url" content="https://usebywhen.com/blog/">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Food Storage & Expiration Guides Blog">
+  <meta name="twitter:description" content="Expert tips on keeping food fresh longer and reducing waste.">
+  <meta name="twitter:image" content="https://usebywhen.com/assets/blog-twitter-card.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  
+  <!-- Critical CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f5f7fa;
+    }
+    
+    /* Header Styles */
+    .blog-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    .site-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.9;
+      transition: opacity 0.3s;
+    }
+    
+    .nav-links a:hover {
+      opacity: 1;
+    }
+    
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    
+    /* Newsletter Signup */
+    .newsletter-signup {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 2rem auto;
+      max-width: 500px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    
+    .newsletter-form button {
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    
+    .newsletter-form button:hover {
+      background: #ee5a5a;
+    }
+    
+    /* Main Content */
+    .blog-main {
+      margin: 4rem 0;
+    }
+    
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    /* Featured Post */
+    .featured-post {
+      margin-bottom: 3rem;
+    }
+    
+    .post-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .post-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .post-card.featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      min-height: 300px;
+    }
+    
+    .post-image {
+      background: linear-gradient(45deg, #ff9a56, #ffad56);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+    }
+    
+    .post-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .category {
+      background: #ff6b6b;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    
+    .post-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    
+    .post-title a {
+      color: #333;
+      text-decoration: none;
+    }
+    
+    .post-title a:hover {
+      color: #667eea;
+    }
+    
+    .post-excerpt {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+    
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    
+    /* Recent Posts Grid */
+    .recent-posts h2 {
+      margin-bottom: 2rem;
+      color: #333;
+    }
+    
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .posts-grid .post-card {
+      display: block;
+    }
+    
+    .posts-grid .post-image {
+      height: 200px;
+    }
+    
+    .posts-grid .post-content {
+      padding: 1.5rem;
+    }
+    
+    .posts-grid .post-title {
+      font-size: 1.2rem;
+    }
+    
+    /* Sidebar */
+    .blog-sidebar {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      height: fit-content;
+      position: sticky;
+      top: 2rem;
+    }
+    
+    .sidebar-section {
+      margin-bottom: 2rem;
+    }
+    
+    .sidebar-section:last-child {
+      margin-bottom: 0;
+    }
+    
+    .sidebar-section h3 {
+      margin-bottom: 1rem;
+      color: #333;
+      font-size: 1.1rem;
+    }
+    
+    .category-list {
+      list-style: none;
+    }
+    
+    .category-list li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .category-list a {
+      color: #666;
+      text-decoration: none;
+      padding: 0.5rem;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    
+    .category-list a:hover {
+      background: #f0f0f0;
+      color: #667eea;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .content-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .post-card.featured {
+        grid-template-columns: 1fr;
+      }
+      
+      .post-image {
+        height: 200px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+  
+  <!-- Schema.org structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "UseByWhen Food Storage Blog",
+    "description": "Expert tips on food storage, expiration dates, and reducing food waste",
+    "url": "https://usebywhen.com/blog/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "UseByWhen",
+      "url": "https://usebywhen.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://usebywhen.com/assets/logo.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://usebywhen.com/blog/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="blog-header">
+    <div class="container">
+      <nav class="site-nav">
+        <a href="/" class="logo">UseByWhen</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </nav>
+      
+      <div class="hero-content">
+        <h1>Food Storage & Expiration Guides</h1>
+        <p>Expert tips on keeping your food fresh longer and reducing waste</p>
+        
+        <!-- Newsletter signup -->
+        <div class="newsletter-signup">
+          <h3>🥬 Get Weekly Food Storage Tips</h3>
+          <p>Join 5,000+ readers reducing food waste</p>
+          <form class="newsletter-form" action="#" method="POST">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+          <small>No spam, unsubscribe anytime</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="blog-main">
+    <div class="content-wrapper">
+      <div class="main-content">
+        <!-- Featured post -->
+        <section class="featured-post">
+          <article class="post-card featured">
+            <div class="post-image">🍯</div>
+            <div class="post-content">
+              <span class="category">Pantry Staples</span>
+              <h2 class="post-title">
+                <a href="/blog/does-honey-expire-ultimate-guide">Does Honey Actually Expire? The Ultimate Storage Guide</a>
+              </h2>
+              <p class="post-excerpt">Discover the truth about honey expiration, proper storage methods, and how to revive crystallized honey. Everything you need to know about this pantry staple that practically lasts forever...</p>
+              <div class="post-meta">
+                <time datetime="2025-08-18">August 18, 2025</time>
+                <span>8 min read</span>
+                <span>50K+ views</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- Recent posts grid -->
+        <section class="recent-posts">
+          <h2>Latest Food Storage Guides</h2>
+          <div class="posts-grid">
+            
+            <article class="post-card">
+              <div class="post-image">🍶</div>
+              <div class="post-content">
+                <span class="category pantry-staples">Pantry Staples</span>
+                <h3 class="post-title">
+                  <a href="/blog/vinegar-expiration-complete-guide">Does Vinegar Expire? The Truth About All Vinegar Types & Storage</a>
+                </h3>
+                <p class="post-excerpt">Discover why most vinegars last indefinitely, learn the differences between vinegar types, and find out proper storage methods for white, apple cider, balsamic, and specialty vinegars...</p>
+                <div class="post-meta">
+                  <time datetime="2025-08-19">August 19, 2025</time>
+                  <span>7 min read</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <div class="post-image">🍚</div>
+              <div class="post-content">
+                <span class="category pantry-staples">Pantry Staples</span>
+                <h3 class="post-title">
+                  <a href="/blog/rice-storage-complete-guide">Rice Storage Guide: White vs Brown Rice Shelf Life & Storage Tips</a>
+                </h3>
+                <p class="post-excerpt">Discover the dramatic differences between white and brown rice storage, learn proper container methods, and find out why one type lasts decades while the other spoils in months...</p>
+                <div class="post-meta">
+                  <time datetime="2025-08-19">August 19, 2025</time>
+                  <span>7 min read</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <div class="post-image">🫒</div>
+              <div class="post-content">
+                <span class="category pantry-staples">Pantry Staples</span>
+                <h3 class="post-title">
+                  <a href="/blog/cooking-oil-expiration-complete-guide">Does Cooking Oil Expire? Complete Storage Guide for All Oil Types</a>
+                </h3>
+                <p class="post-excerpt">Complete guide to cooking oil expiration for olive oil, vegetable oil, coconut oil, and more. Learn storage methods, rancidity signs, and shelf life facts...</p>
+                <div class="post-meta">
+                  <time datetime="2025-08-19">August 19, 2025</time>
+                  <span>8 min read</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <div class="post-image">🤎</div>
+              <div class="post-content">
+                <span class="category baking-essentials">Baking Essentials</span>
+                <h3 class="post-title">
+                  <a href="/blog/brown-sugar-shelf-life-facts">Brown Sugar vs Regular Sugar: Expiration Facts You Need to Know</a>
+                </h3>
+                <p class="post-excerpt">Learn the key differences between brown and white sugar expiration, storage requirements, and why brown sugar hardens while white sugar stays loose...</p>
+                <div class="post-meta">
+                  <time datetime="2025-08-18">August 18, 2025</time>
+                  <span>6 min read</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <div class="post-image">🍚</div>
+              <div class="post-content">
+                <span class="category pantry-staples">Pantry Staples</span>
+                <h3 class="post-title">
+                  <a href="/blog/sugar-expiration-storage-guide">Sugar Storage Secrets: Does Sugar Really Expire?</a>
+                </h3>
+                <p class="post-excerpt">Discover why sugar doesn't spoil, learn proper storage methods for all sugar types, and find out how to prevent clumping...</p>
+                <div class="post-meta">
+                  <time datetime="2025-08-18">August 18, 2025</time>
+                  <span>7 min read</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="post-card">
+              <div class="post-image">🌾</div>
+              <div class="post-content">
+                <span class="category baking-essentials">Baking Essentials</span>
+                <h3 class="post-title">
+                  <a href="/blog/flour-expiration-storage-tips">Flour Expiration Guide: When to Toss vs Keep Your Flour</a>
+                </h3>
+                <p class="post-excerpt">Complete flour expiration guide covering all flour types, storage methods, and signs of spoilage. Learn when flour goes bad and how to extend shelf life...</p>
+                <div class="post-meta">
+                  <time datetime="2025-08-18">August 18, 2025</time>
+                  <span>7 min read</span>
+                </div>
+              </div>
+            </article>
+
+
+
+
+
+          </div>
+        </section>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="blog-sidebar">
+        <div class="sidebar-section">
+          <h3>Browse by Category</h3>
+          <ul class="category-list">
+            <li><a href="/blog/category/pantry-staples">🏺 Pantry Staples <span>(12 posts)</span></a></li>
+            <li><a href="/blog/category/fresh-produce">🥬 Fresh Produce <span>(8 posts)</span></a></li>
+            <li><a href="/blog/category/dairy-refrigerated">🥛 Dairy & Refrigerated <span>(6 posts)</span></a></li>
+            <li><a href="/blog/category/canned-goods">🥫 Canned Goods <span>(5 posts)</span></a></li>
+            <li><a href="/blog/category/baking-essentials">🌾 Baking Essentials <span>(7 posts)</span></a></li>
+            <li><a href="/blog/category/food-safety">🛡️ Food Safety <span>(9 posts)</span></a></li>
+            <li><a href="/blog/category/meal-prep">🍱 Meal Prep Tips <span>(4 posts)</span></a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>Popular Posts</h3>
+          <div class="popular-posts">
+            <div class="mini-post">
+              <h4><a href="/blog/does-honey-expire-ultimate-guide">Does Honey Actually Expire?</a></h4>
+              <small>50K+ views</small>
+            </div>
+            <div class="mini-post">
+              <h4><a href="/blog/expiration-date-tracker-ultimate-guide">Ultimate Expiration Date Tracker</a></h4>
+              <small>23K+ views</small>
+            </div>
+            <div class="mini-post">
+              <h4><a href="/blog/sugar-expiration-storage-guide">Sugar Storage Secrets</a></h4>
+              <small>15K+ views</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h3>🚀 Try UseByWhen App</h3>
+          <p>Track expiration dates for 1000+ items automatically.</p>
+          <a href="/" class="cta-button" style="background: #667eea; color: white; padding: 0.75rem 1rem; border-radius: 8px; text-decoration: none; display: inline-block; font-weight: 600; margin-top: 0.5rem;">Get Started Free</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Load external CSS -->
+  <link rel="stylesheet" href="/assets/styles.css">
+  
+  <!-- Analytics -->
+  <script>
+    // Newsletter signup
+    document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = this.querySelector('input[type="email"]').value;
+      
+      // Add newsletter signup logic here
+      console.log('Newsletter signup:', email);
+      
+      // Show success message
+      const button = this.querySelector('button');
+      const originalText = button.textContent;
+      button.textContent = 'Subscribed!';
+      button.style.background = '#10b981';
+      
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.background = '#ff6b6b';
+      }, 2000);
+      
+      this.reset();
+    });
+  </script>
+</body>
+</html>
